@@ -1,0 +1,17 @@
+{
+  "_note": "Bundled offline snapshot of well-known advisories for packages commonly used in AI applications. It is a demonstration baseline, NOT a complete vulnerability database. In production use the live OSV lookup (engines/risk.py::osv_lookup) or run `pip-audit`.",
+  "advisories": [
+    {"package": "torch", "affected_below": "2.6.0", "severity": "critical", "id": "CVE-2025-32434",
+     "issue": "torch.load(weights_only=True) could still allow remote code execution when loading an untrusted checkpoint.", "fix": "Upgrade to torch>=2.6.0 and only load checkpoints from trusted sources."},
+    {"package": "langchain", "affected_below": "0.0.142", "severity": "critical", "id": "CVE-2023-29374",
+     "issue": "LLMMathChain allowed arbitrary code execution through prompt injection.", "fix": "Upgrade langchain and avoid exec/eval-style chains on untrusted input."},
+    {"package": "pillow", "affected_below": "10.0.1", "severity": "high", "id": "CVE-2023-4863",
+     "issue": "Bundled libwebp heap buffer overflow reachable through crafted WebP images.", "fix": "Upgrade Pillow>=10.0.1."},
+    {"package": "requests", "affected_below": "2.32.0", "severity": "medium", "id": "CVE-2024-35195",
+     "issue": "A Session that made a request with verify=False kept skipping certificate verification for later requests to the same host.", "fix": "Upgrade requests>=2.32.0."},
+    {"package": "urllib3", "affected_below": "1.26.18", "severity": "medium", "id": "CVE-2023-45803",
+     "issue": "Request body was not stripped on some cross-origin redirects.", "fix": "Upgrade urllib3>=1.26.18 (or >=2.0.7)."},
+    {"package": "jinja2", "affected_below": "3.1.3", "severity": "medium", "id": "CVE-2024-22195",
+     "issue": "The xmlattr filter accepted keys with spaces, enabling HTML attribute injection.", "fix": "Upgrade jinja2>=3.1.3."}
+  ]
+}
